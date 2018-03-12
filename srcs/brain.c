@@ -5,9 +5,12 @@
 ** blabla
 */
 
-#include "my.h"
+#include "tetris.h"
 
-int main(int argc, char *argv[])
+int main(int ac, char **av)
 {
+	struct tetrimino	*list = malloc(sizeof(struct tetrimino));
+
+	list = open_read_tetriminos(list, ac, av);
 	return(0);
 }

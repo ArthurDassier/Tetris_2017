@@ -6,6 +6,7 @@
 ##
 
 SRC	=	srcs/brain.c		\
+		srcs/open_read.c	\
 
 OBJ	=	$(SRC:.c = .o)
 
