@@ -13,7 +13,7 @@ NAME=		libmy.a
 
 CFLAGS	+=	-Wall -Wextra
 
-CPPFLAGS	+= -I./../include
+CPPFLAGS	+=	-I./../include
 
 SRC=		my_printf/cases.c		\
 		my_printf/cases2.c		\
