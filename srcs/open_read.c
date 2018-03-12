@@ -7,11 +7,11 @@
 
 #include "tetris.h"
 
-struct tetrimino *open_read_tetriminos(struct tetrimino *list, int ac, char **av)
+tetrimino *open_read_tetriminos(tetrimino *list, int ac, char **av)
 {
-	struct tetrimino	*tmp = list;
-	char			*line = malloc(sizeof(char) * 11);
-	int			fd = 0;
+	tetrimino	*tmp = list;
+	char		*line = malloc(sizeof(char) * 11);
+	int		fd = 0;
 
 	while (ac != 1) {
 		fd = open(av[ac-1], O_RDONLY);

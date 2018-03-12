@@ -14,14 +14,14 @@
 #include "fcntl.h"
 #include "sys/types.h"
 
-struct tetrimino
+typedef struct tetrimino
 {
 	int			width;
 	int			height;
 	int			color;
 	char			**form;
 	struct tetrimino	*next;
-};
+} tetrimino;
 
 struct tetrimino *open_read_tetriminos(struct tetrimino *list, int ac,
 char **av);
