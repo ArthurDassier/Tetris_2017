@@ -2,40 +2,42 @@
 ## EPITECH PROJECT, 2017
 ## Makefile
 ## File description:
-## Makefile
+## a_makefile_for_projetcs
 ##
 
-SRC	=	srcs/brain.c		\
-		srcs/open_read.c	\
+CC	=	gcc -g
 
-OBJ	=	$(SRC:.c = .o)
+RM	=	rm -rf
+
+CFLAGS	+=	-g3 -Wall -Wextra
+
+CFLAGS	+=	-I./include
 
 NAME	=	tetris
 
-LIB_DIR	=	./lib
+SRCS	=	srcs/brain.c		\
+		srcs/open_read.c	\
 
-MY.H_DIR	=	./include
+OBJS	=	$(SRCS:.c=.o)
 
-CC	=	gcc
+LIB =		-L./lib -lmy
 
-C_FLAGS	=	-Wall -Wextra
+all: $(NAME)
 
-LIB_FLAG	=	-L$(LIB_DIR) -lmy
-
-INCL_FLAG	=	-I$(MY.H_DIR)
-
-all:	$(NAME)
-
-$(NAME):	$(OBJ)
-		$(MAKE) -C lib/my
-		$(CC) -o $(NAME) $(OBJ) $(C_FLAGS) $(LIB_FLAG) $(INCL_FLAG)
+$(NAME): $(OBJS)
+	make -C ./lib/my
+	$(CC) $(OBJS) -o $(NAME) $(LIB)
 
 clean:
-	rm -f *.o
+	$(RM) $(OBJS)
+	make -C ./lib/my clean
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
+	$(RM) lib/*.a
+	make -C ./lib/my fclean
+
 
 re: fclean all
 
-.PHONY: fclean all re clean
+.PHONY: all clean fclean re

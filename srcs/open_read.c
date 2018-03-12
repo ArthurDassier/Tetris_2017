@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2017
-** open_read.c
+** EPITECH PROJECT, 2018
+** PSU_tetris_2017
 ** File description:
-** open_read_h_
+** open_read
 */
 
 #include "tetris.h"
