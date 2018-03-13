@@ -27,10 +27,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct tetriminos
-{
-	char			**info;
-	struct tetriminos	*next;
-};
+void draw_help(char **av);
+void print_debug(char **av);
 
 #endif
