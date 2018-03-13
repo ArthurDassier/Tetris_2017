@@ -27,6 +27,8 @@ char *my_strcat(char *dest, char const *src);
 int my_put_nbr_base(int nb, char *base);
 long my_put_nbr_base_long(long long nb, char *base);
 char *my_realloc(char *str);
+int *my_malloc_char(char *str, int size);
+int *my_malloc_int(int *str, int size);
 void my_puterror(char *str);
 int cti(char c);
 char itc(int nb);

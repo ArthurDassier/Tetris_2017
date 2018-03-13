@@ -21,6 +21,7 @@ SRC=		my_printf/cases.c		\
 		my_printf/my_printf.c		\
 		convert.c			\
 		my_getnbr.c			\
+		my_malloc.c			\
 		my_put_nbr_base_long.c		\
 		my_put_nbr_base.c		\
 		my_put_nbr.c			\
