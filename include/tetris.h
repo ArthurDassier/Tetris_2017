@@ -14,4 +14,6 @@
 #include "fcntl.h"
 #include "sys/types.h"
 
+void draw_help(char **av);
+
 #endif
