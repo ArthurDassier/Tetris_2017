@@ -10,16 +10,11 @@
 tetrimino *open_read_tetriminos(tetrimino *list, int ac, char **av)
 {
 	tetrimino	*tmp = list;
-	char		*line = malloc(sizeof(char) * 11);
-	int		fd = 0;
+	File		fd = 0;
 
 	while (ac != 1) {
 		fd = open(av[ac-1], O_RDONLY);
-		read(fd, line, 10);
-		line[10] = '\0';
-		list->width = my_getnbr(line);
-		list->height = my_getnbr(line);
-		list->color = my_getnbr(line);
+		getline(list->info, fd);
 		list->next = malloc(sizeof(struct tetrimino));
 		list = list->next;
 		close(fd);

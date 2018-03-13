@@ -16,10 +16,7 @@
 
 typedef struct tetrimino
 {
-	int			width;
-	int			height;
-	int			color;
-	char			**form;
+	int			**info;
 	struct tetrimino	*next;
 } tetrimino;
 
