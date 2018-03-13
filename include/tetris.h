@@ -29,5 +29,6 @@
 
 void draw_help(char **av);
 void print_debug(char **av);
+struct tetriminos *tetriminos_error_handling(struct tetriminos *all_teri, int ac, char **av);
 
 #endif

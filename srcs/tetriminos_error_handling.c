@@ -17,7 +17,8 @@ struct tetriminos *tetriminos_error_handling(struct tetriminos *all_tetri, int a
 	tetrim = opendir("tetriminos");
 	while ((read_direc = readdir(tetrim)) != NULL) {
 		file = fopen(read_direc->d_name, "r");
-		fclose(file);
+		if (read_direc->d_name[0] != '.')
+			my_printf("%s\n", read_direc->d_name);
 	}
 	return (tmp);
 }
