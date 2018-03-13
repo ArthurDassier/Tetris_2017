@@ -15,29 +15,28 @@ CFLAGS	+=	-I./include
 
 NAME	=	tetris
 
-SRCS	=	srcs/brain.c		\
-		srcs/open_read.c	\
+SRCS	=	srcs/brain.c				\
+		srcs/tetriminos_error_handling.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 
 LIB =		-L./lib -lmy
 
-all: $(NAME)
+all:		$(NAME)
 
-$(NAME): $(OBJS)
-	make -C ./lib/my
-	$(CC) $(OBJS) -o $(NAME) $(LIB)
+$(NAME):	$(OBJS)
+		make -C ./lib/my
+		$(CC) $(OBJS) -o $(NAME) $(LIB)
 
 clean:
-	$(RM) $(OBJS)
-	make -C ./lib/my clean
+		$(RM) $(OBJS)
+		make -C ./lib/my clean
 
-fclean: clean
-	$(RM) $(NAME)
-	$(RM) lib/*.a
-	make -C ./lib/my fclean
+fclean: 	clean
+		$(RM) $(NAME)
+		$(RM) lib/*.a
+		make -C ./lib/my fclean
 
-
-re: fclean all
+re: 		fclean all
 
 .PHONY: all clean fclean re
