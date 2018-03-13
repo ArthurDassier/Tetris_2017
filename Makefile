@@ -5,11 +5,11 @@
 ## a_makefile_for_projetcs
 ##
 
-CC	=	gcc -g
+CC	=	gcc -g3
 
 RM	=	rm -rf
 
-CFLAGS	+=	-g3 -Wall -Wextra
+CFLAGS	+=	-Wall -Wextra
 
 CFLAGS	+=	-I./include
 

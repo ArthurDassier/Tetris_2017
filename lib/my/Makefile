@@ -6,31 +6,42 @@
 ##
 
 CC=		gcc
-NAME=		libmy.a
-FLAGS=		-Wall -Wextra
-
-SRC_DIR=        $(realpath .)
-
-SRC=		$(SRC_DIR)/my_putchar.c \
-		$(SRC_DIR)/my_putstr.c \
-		$(SRC_DIR)/my_strlen.c \
-		$(SRC_DIR)/my_memset.c \
-		$(SRC_DIR)/my_strcpy.c \
-		$(SRC_DIR)/my_strcmp.c \
-		$(SRC_DIR)/my_getnbr.c \
-		$(SRC_DIR)/my_strcat.c \
-		$(SRC_DIR)/my_putnbr.c \
-		$(SRC_DIR)/my_isalpha.c \
-		$(SRC_DIR)/my_show_tab.c \
 
 OBJ=            $(SRC:.c=.o)
 
+NAME=		libmy.a
+
+CFLAGS	+=	-Wall -Wextra
+
+CPPFLAGS	+=	-I./../include
+
+SRC=		my_printf/cases.c		\
+		my_printf/cases2.c		\
+		my_printf/cases3.c		\
+		my_printf/my_printf.c		\
+		convert.c			\
+		my_getnbr.c			\
+		my_put_nbr_base_long.c		\
+		my_put_nbr_base.c		\
+		my_put_nbr.c			\
+		my_putchar.c			\
+		my_puterror.c			\
+		my_putstr.c			\
+		my_realloc.c			\
+		my_revstr.c			\
+		my_strcat.c			\
+		my_strcpy.c			\
+		my_strfind.c			\
+		my_strlen.c			\
+		my_strncmp.c			\
+		my_strncpy.c			\
+		my_swap.c			\
+
+
 all :           $(NAME)
 
-$(NAME):
-		$(CC) -c $(SRC) $(FLAGS)
+$(NAME):	$(OBJ)
 		ar rc $(NAME) $(OBJ)
-		cp my.h ../../include
 		cp $(NAME) ../
 
 .PHONY: clean
