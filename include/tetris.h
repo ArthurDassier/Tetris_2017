@@ -14,13 +14,4 @@
 #include "fcntl.h"
 #include "sys/types.h"
 
-typedef struct tetrimino
-{
-	int			**info;
-	struct tetrimino	*next;
-} tetrimino;
-
-struct tetrimino *open_read_tetriminos(struct tetrimino *list, int ac,
-char **av);
-
 #endif
