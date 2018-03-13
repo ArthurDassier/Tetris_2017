@@ -17,6 +17,7 @@ NAME	=	tetris
 
 SRCS	=	srcs/brain.c		\
 		srcs/help_flag.c	\
+		srcs/draw_debug.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 

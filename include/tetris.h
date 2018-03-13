@@ -14,6 +14,12 @@
 #include "fcntl.h"
 #include "sys/types.h"
 
+typedef struct key
+{
+
+} key;
+
 void draw_help(char **av);
+void print_debug(char **av);
 
 #endif
