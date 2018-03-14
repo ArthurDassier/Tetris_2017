@@ -26,6 +26,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <getopt.h>
 
 typedef struct char_arg
 {
@@ -42,6 +43,7 @@ typedef struct char_arg
 
 void draw_help(char **av);
 void print_debug(char_arg *printable);
-void launch_debug(char **av);
+int launch_debug(int ac, char **av);
+int modif_debug(int ac, char **av, char_arg *printable);
 
 #endif
