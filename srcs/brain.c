@@ -41,9 +41,9 @@ int main(int ac, char **av)
 		{NULL, 0, NULL, 0}
 	};
 
-	tetriminos_error_handling(tetri);
 	while ((oc = getopt_long(ac, av, "D", longopts, NULL)) != -1)
 		if (manage_argv(ac, av, oc) == 84)
 			return (84);
+	tetriminos_error_handling(tetri);
 	return (0);
 }
