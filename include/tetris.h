@@ -53,5 +53,6 @@ void draw_help(char **av);
 void print_debug(char_arg *printable);
 void launch_debug(char **av);
 struct tetriminos *tetriminos_error_handling(struct tetriminos *tetri);
+int remp_tetri_info_form(struct tetriminos *tetri, char *file);
 
 #endif

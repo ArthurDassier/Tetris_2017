@@ -13,7 +13,7 @@ char *my_strcpy(char *dest, char const *src);
 
 char *my_strcat(char *str1, char *str2)
 {
-	char	*tmp = malloc(sizeof(char) * my_strlen(str1));
+	char	*tmp = malloc(sizeof(char) * my_strlen(str1) + 1);
 	int	i = 0;
 	int	j = 0;
 
