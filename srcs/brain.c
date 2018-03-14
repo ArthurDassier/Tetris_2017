@@ -6,7 +6,6 @@
 */
 
 #include <unistd.h>
-#include <getopt.h>
 #include "tetris.h"
 
 int manage_argv(int ac, char **av, int oc)
@@ -18,7 +17,7 @@ int manage_argv(int ac, char **av, int oc)
 			draw_help(av);
 			return (0);
 		case 'D':
-			launch_debug(av);
+			launch_debug(ac, av);
 			return (0);
 		case ':':
 			my_puterror("read --help before testing random"
@@ -38,9 +37,9 @@ int main(int ac, char **av)
 	int			oc;
 	struct option		longopts[] = {
 		{"help", no_argument, NULL, 'h'},
+		{"debug", no_argument, NULL, 'D'},
 		{NULL, 0, NULL, 0}
 	};
-
 	while ((oc = getopt_long(ac, av, "D", longopts, NULL)) != -1)
 		if (manage_argv(ac, av, oc) == 84)
 			return (84);

@@ -27,6 +27,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <getopt.h>
 
 typedef struct char_arg
 {
@@ -51,8 +52,9 @@ struct tetriminos
 char *get_next_line(int fd);
 void draw_help(char **av);
 void print_debug(char_arg *printable);
-void launch_debug(char **av);
 struct tetriminos *tetriminos_error_handling(struct tetriminos *tetri);
+int launch_debug(int ac, char **av);
+int modif_debug(int ac, char **av, char_arg *printable);
 int remp_tetri_info_form(struct tetriminos *tetri, char *file);
 
 #endif
