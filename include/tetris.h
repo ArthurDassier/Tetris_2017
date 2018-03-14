@@ -44,6 +44,7 @@ typedef struct char_arg
 
 struct tetriminos
 {
+	char			*name;
 	char			*info;
 	char			**form;
 	struct tetriminos	*next;
@@ -52,9 +53,13 @@ struct tetriminos
 char *get_next_line(int fd);
 void draw_help(char **av);
 void print_debug(char_arg *printable);
-struct tetriminos *tetriminos_error_handling(struct tetriminos *tetri);
 int launch_debug(int ac, char **av);
 int modif_debug(int ac, char **av, char_arg *printable);
+
+struct tetriminos *recup_tetriminos(struct tetriminos *tetri);
 int remp_tetri_info_form(struct tetriminos *tetri, char *file);
+void cpy_tetri(struct tetriminos *order, struct tetriminos *tetri);
+int alph_order(struct tetriminos *order, struct tetriminos *tetri, char alph);
+struct tetriminos *tetri_order(struct tetriminos *tetri);
 
 #endif
