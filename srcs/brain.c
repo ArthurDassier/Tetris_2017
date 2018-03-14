@@ -5,7 +5,6 @@
 ** blabla
 */
 
-#include <unistd.h>
 #include "tetris.h"
 
 int manage_argv(int ac, char **av, int oc)
@@ -43,5 +42,6 @@ int main(int ac, char **av)
 	while ((oc = getopt_long(ac, av, "D", longopts, NULL)) != -1)
 		if (manage_argv(ac, av, oc) == 84)
 			return (84);
+	tetriminos_error_handling(tetri);
 	return (0);
 }
