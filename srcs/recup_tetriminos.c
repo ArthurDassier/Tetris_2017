@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** PSU_tetris_2017
 ** File description:
-** tetriminos_error_handling
+** recup_tetriminos.c
 */
 
 #include "tetris.h"

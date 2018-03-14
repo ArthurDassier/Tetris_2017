@@ -16,13 +16,15 @@ CFLAGS	+=	-I./include
 NAME	=	tetris
 
 SRCS	=	srcs/brain.c				\
-		srcs/tetriminos_error_handling.c	\
+		srcs/tetrimino_error_handling.c		\
+		srcs/recup_tetriminos.c			\
 		srcs/help_flag.c			\
 		srcs/draw_debug.c			\
 		srcs/get_next_line.c			\
 		srcs/modif_debug.c			\
 		srcs/the_switch.c			\
 		srcs/tetri_order.c			\
+		srcs/recup_tetri_info.c			\
 
 OBJS	=	$(SRCS:.c=.o)
 
