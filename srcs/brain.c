@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2017
+** EPITECH PROJECT, 2018
 ** brain.c
 ** File description:
 ** blabla
@@ -18,7 +18,7 @@ int manage_argv(int ac, char **av, int oc)
 			draw_help(av);
 			return (0);
 		case 'D':
-			print_debug(av);
+			launch_debug(av);
 			return (0);
 		case ':':
 			my_puterror("read --help before testing random"

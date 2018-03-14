@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2017
+** EPITECH PROJECT, 2018
 ** tetris.h
 ** File description:
 ** tetris_h
@@ -27,7 +27,21 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+typedef struct char_arg
+{
+	char *key_left;
+	char *key_right;
+	char *key_turn;
+	char *key_drop;
+	char *key_quit;
+	char *key_pause;
+	char *key_next;
+	char *key_level;
+	char *key_size;
+} char_arg;
+
 void draw_help(char **av);
-void print_debug(char **av);
+void print_debug(char_arg *printable);
+void launch_debug(char **av);
 
 #endif

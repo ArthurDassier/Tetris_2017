@@ -15,14 +15,9 @@ CFLAGS	+=	-I./include
 
 NAME	=	tetris
 
-<<<<<<< HEAD
-SRCS	=	srcs/brain.c				\
-		srcs/tetriminos_error_handling.c	\
-=======
 SRCS	=	srcs/brain.c		\
 		srcs/help_flag.c	\
 		srcs/draw_debug.c	\
->>>>>>> arthur
 
 OBJS	=	$(SRCS:.c=.o)
 

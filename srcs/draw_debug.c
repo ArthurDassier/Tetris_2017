@@ -7,17 +7,39 @@
 
 #include "tetris.h"
 
-void print_debug(char **av)
+char_arg *init_debug(char_arg *printable)
 {
-	(void) av;
+	printable->key_left = "Key Left :  ^EOD";
+	printable->key_right = "Key Right :  ^EOD";
+	printable->key_turn = "Key Turn :  (space)";
+	printable->key_drop = "Key Drop :  x";
+	printable->key_quit = "Key Quit :  q";
+	printable->key_pause = "Key Pause :  p";
+	printable->key_next = "Next :  Yes";
+	printable->key_level = "Level :  1";
+	printable->key_size = "Size :\t20*10";
+	return (printable);
+}
+
+void print_debug(char_arg *printable)
+{
 	my_printf("*** DEBUG MODE ***\n");
-	my_printf("Key Left :  ^EOD\n");
-	my_printf("Key Right :  ^EOC\n");
-	my_printf("Key Turn :  (space)\n");
-	my_printf("Key Drop :  x\n");
-	my_printf("Key Quit :  q\n");
-	my_printf("Key Pause :  p\n");
-	my_printf("Next :  Yes\n");
-	my_printf("Level :  1\n");
-	my_printf("Size :\t20*10\n");
+	my_printf("%s\n", printable->key_left);
+	my_printf("%s\n", printable->key_right);
+	my_printf("%s\n", printable->key_turn);
+	my_printf("%s\n", printable->key_drop);
+	my_printf("%s\n", printable->key_quit);
+	my_printf("%s\n", printable->key_pause);
+	my_printf("%s\n", printable->key_next);
+	my_printf("%s\n", printable->key_level);
+	my_printf("%s\n", printable->key_size);
+}
+
+void launch_debug(char **av)
+{
+	char_arg	*printable = malloc(sizeof(char_arg));
+
+	(void) av;
+	printable = init_debug(printable);
+	print_debug(printable);
 }
