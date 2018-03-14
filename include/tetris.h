@@ -53,7 +53,11 @@ char *get_next_line(int fd);
 void draw_help(char **av);
 void print_debug(char_arg *printable);
 struct tetriminos *tetriminos_error_handling(struct tetriminos *tetri);
+<<<<<<< HEAD
 int launch_debug(int ac, char **av);
 int modif_debug(int ac, char **av, char_arg *printable);
+=======
+int remp_tetri_info_form(struct tetriminos *tetri, char *file);
+>>>>>>> vincent
 
 #endif
