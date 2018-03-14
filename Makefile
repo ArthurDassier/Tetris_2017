@@ -21,6 +21,7 @@ SRCS	=	srcs/brain.c				\
 		srcs/draw_debug.c			\
 		srcs/get_next_line.c			\
 		srcs/modif_debug.c			\
+		srcs/the_switch.c			\
 
 OBJS	=	$(SRCS:.c=.o)
 

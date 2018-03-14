@@ -56,5 +56,7 @@ struct tetriminos *tetriminos_error_handling(struct tetriminos *tetri);
 int launch_debug(int ac, char **av);
 int modif_debug(int ac, char **av, char_arg *printable);
 int remp_tetri_info_form(struct tetriminos *tetri, char *file);
+int get_argv(int oc, char_arg *ptb);
+char *change_str(char *arg, char *printer);
 
 #endif
