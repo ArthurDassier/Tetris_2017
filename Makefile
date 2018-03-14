@@ -15,7 +15,8 @@ CFLAGS	+=	-I./include
 
 NAME	=	tetris
 
-SRCS	=	srcs/brain.c		\
+SRCS	=	srcs/brain.c				\
+		srcs/tetriminos_error_handling.c	\
 		srcs/help_flag.c	\
 		srcs/draw_debug.c	\
 

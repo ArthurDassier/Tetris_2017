@@ -34,11 +34,13 @@ int manage_argv(int ac, char **av, int oc)
 
 int main(int ac, char **av)
 {
-	int		oc;
-	struct option	longopts[] = {
+	struct tetriminos	*all_tetri = malloc(sizeof(all_tetri));
+	int			oc;
+	struct option		longopts[] = {
 		{"help", no_argument, NULL, 'h'},
 		{NULL, 0, NULL, 0}
 	};
+	tetriminos_error_handling(all_tetri, ac, av);
 	while ((oc = getopt_long(ac, av, "D", longopts, NULL)) != -1)
 		if (manage_argv(ac, av, oc) == 84)
 			return (84);
