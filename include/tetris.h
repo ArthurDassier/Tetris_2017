@@ -8,6 +8,7 @@
 #ifndef TETRIS_H_
 #define TETRIS_H_
 
+#include "get_next_line.h"
 #include "my.h"
 #include "printf.h"
 #include <sys/stat.h>
@@ -40,8 +41,17 @@ typedef struct char_arg
 	char *key_size;
 } char_arg;
 
+struct tetriminos
+{
+	char			*info;
+	char			**form;
+	struct tetriminos	*next;
+};
+
+char *get_next_line(int fd);
 void draw_help(char **av);
 void print_debug(char_arg *printable);
 void launch_debug(char **av);
+struct tetriminos *tetriminos_error_handling(struct tetriminos *tetri);
 
 #endif
