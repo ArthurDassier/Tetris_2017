@@ -20,6 +20,7 @@ SRCS	=	srcs/brain.c				\
 		srcs/help_flag.c			\
 		srcs/draw_debug.c			\
 		srcs/get_next_line.c			\
+		srcs/modif_debug.c			\
 
 OBJS	=	$(SRCS:.c=.o)
 

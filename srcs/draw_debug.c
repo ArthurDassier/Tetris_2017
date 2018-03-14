@@ -35,11 +35,15 @@ void print_debug(char_arg *printable)
 	my_printf("%s\n", printable->key_size);
 }
 
-void launch_debug(char **av)
+int launch_debug(int ac, char **av)
 {
 	char_arg	*printable = malloc(sizeof(char_arg));
 
-	(void) av;
+	if (printable == NULL)
+		return (84);
 	printable = init_debug(printable);
+	if (modif_debug(ac, av, printable) == 84)
+		return (84);
 	print_debug(printable);
+	return (0);
 }
