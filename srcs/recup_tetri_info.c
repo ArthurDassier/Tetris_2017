@@ -32,6 +32,7 @@ char *recup_color(char *str)
 	++i;
 	while (str[i] != '\0')
 		tmp[j++] = str[i++];
+	tmp[j] = '\0';
 	return (tmp);
 }
 char *recup_height(char *str)
@@ -43,6 +44,7 @@ char *recup_height(char *str)
 		tmp[i] = str[i];
 		++i;
 	}
+	tmp[i] = '\0';
 	return (tmp);
 }
 

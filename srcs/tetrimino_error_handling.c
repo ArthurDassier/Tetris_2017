@@ -83,8 +83,7 @@ void tetrimino_error_handling(struct tetriminos *tetri)
 		return;	
 	}
 	my_printf("Size : %s", recup_height(tetri->info));
-	my_printf("%c", '*');
-	my_printf("%s ", recup_width(tetri->info));
+	my_printf("*%s ", recup_width(tetri->info));
 	my_printf(" Color : %c\n", tetri->info[4]);
 	while (tetri->form[i] != NULL)
 		my_printf("%s\n", tetri->form[i++]);
