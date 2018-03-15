@@ -7,6 +7,22 @@
 
 #include "tetris.h"
 
+char *check_space(char *str, int *i)
+{
+	if (str[*i] == ' ') {
+		str[*i] = '(';
+		str[*i + 1] = 's';
+		str[*i + 2] = 'p';
+		str[*i + 3] = 'a';
+		str[*i + 4] = 'c';
+		str[*i + 5] = 'e';
+		str[*i + 6] = ')';
+		str[*i + 7] = '\0';
+		*i += 6;
+	}
+	return (str);
+}
+
 int check_arg(char *arg)
 {
 	int	i = 0;
@@ -33,6 +49,7 @@ char *change_str(char *arg, char *printer)
 
 	if (tmp == NULL)
 		return (NULL);
+	arg = check_kcu(arg);
 	while (printer[i] != ':') {
 		tmp[i] = printer[i];
 		++i;
@@ -42,6 +59,7 @@ char *change_str(char *arg, char *printer)
 	i += 3;
 	for (int j = 0; arg[j] != '\0'; ++j) {
 		tmp[i] = arg[j];
+		tmp = check_space(tmp, &i);
 		++i;
 		tmp[i] = '\0';
 		my_realloc(tmp);
@@ -54,9 +72,7 @@ char *change_size(char *arg, char *printer)
 	int	i = 0;
 	char	*tmp = malloc(sizeof(char) * 1024);
 
-	if (tmp == NULL)
-		return (NULL);
-	if (check_arg(arg) == 84)
+	if (tmp == NULL || check_arg(arg) == 84)
 		return (NULL);
 	while (printer[i] != '\t') {
 		tmp[i] = printer[i];
