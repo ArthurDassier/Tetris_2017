@@ -20,6 +20,30 @@ char *change_str(char *arg, char *printer)
 	}
 	for (int count = i; count != i + 3; ++count)
 		tmp[count] = printer[count];
+	i += 3;
+	for (int j = 0; arg[j] != '\0'; ++j) {
+		tmp[i] = arg[j];
+		++i;
+		tmp[i] = '\0';
+		my_realloc(tmp);
+	}
+	tmp[i] = '\0';
+	return (tmp);
+}
+
+char *change_size(char *arg, char *printer)
+{
+	int	i = 0;
+	char	*tmp = malloc(sizeof(char) * 1024);
+
+	if (tmp == NULL)
+		return (NULL);
+	while (printer[i] != '\t') {
+		tmp[i] = printer[i];
+		++i;
+	}
+	tmp[i] = printer[i];
+	++i;
 	for (int j = 0; arg[j] != '\0'; ++j) {
 		tmp[i] = arg[j];
 		++i;

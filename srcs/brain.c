@@ -32,22 +32,15 @@ int manage_argv(int ac, char **av, int oc)
 
 int main(int ac, char **av)
 {
-	struct tetriminos	*tetri = malloc(sizeof(struct tetriminos));
 	int			oc;
 	struct option		longopts[] = {
 		{"help", no_argument, NULL, 'h'},
 		{"debug", no_argument, NULL, 'D'},
 		{NULL, 0, NULL, 0}
 	};
+
 	while ((oc = getopt_long(ac, av, "D", longopts, NULL)) != -1)
 		if (manage_argv(ac, av, oc) == 84)
 			return (84);
-	tetri = recup_tetriminos(tetri);
-	tetri = tetri_order(tetri);
-	while (tetri->next != NULL) {
-		tetrimino_error_handling(tetri);
-		tetri = tetri->next;
-	}
-	my_printf("Press any key to start Tetris");
 	return (0);
 }
