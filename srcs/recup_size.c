@@ -19,15 +19,16 @@ struct size recup_size(char *size)
 		exit (84);
 	while (size[i] != '\t')
 		++i;
-	++i;
-	while (size[i] != '*' && size[i] != '\0')
-		tmp2[j++] = size[i++];
-	++i;
+	while (size[++i] != '*' && size[i] != '\0')
+		tmp2[j++] = size[i];
+	tmp2[j] = '\0';
 	max.width = my_getnbr(tmp2);
 	j = 0;
-	while (size[i] != '\0')
-		tmp[j++] = size[i++];
+	while (size[++i] != '\0')
+		tmp[j++] = size[i];
+	tmp[j] = '\0';
 	max.height = my_getnbr(tmp);
 	free(tmp);
+	free(tmp2);
 	return (max);
 }
