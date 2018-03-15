@@ -45,5 +45,7 @@ int launch_debug(int ac, char **av)
 	if (modif_debug(ac, av, printable) == 84)
 		return (84);
 	print_debug(printable);
+	if (print_tetri() == 84)
+		return (84);
 	return (0);
 }
