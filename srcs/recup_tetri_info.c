@@ -7,6 +7,18 @@
 
 #include "tetris.h"
 
+int nb_tetriminos(struct tetriminos *tetri)
+{
+	struct tetriminos	*tmp = tetri;
+	int			nb = 0;
+
+	while (tetri->next != NULL) {
+		++nb;
+		tetri = tetri->next;
+	}
+	tetri = tmp;
+	return (nb);
+}
 char *recup_color(char *str)
 {
 	char	*tmp = malloc(sizeof(char) * (my_strlen(str) + 1));

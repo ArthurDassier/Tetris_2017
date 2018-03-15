@@ -72,5 +72,6 @@ int nb_stars(char *str);
 char *recup_height(char *str);
 char *recup_width(char *str);
 char *recup_color(char *str);
+int nb_tetriminos(struct tetriminos *tetri);
 
 #endif
