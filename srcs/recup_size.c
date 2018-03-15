@@ -12,15 +12,18 @@ struct size recup_size(char *size)
 	struct	size max;
 	int	i = 0;
 	int	j = 0;
-	char	*tmp = malloc(sizeof(char) * (size + 1));
+	char	*tmp = malloc(sizeof(char) * my_strlen(size) + 1);
 
+	if (tmp == NULL)
+		exit (84);
 	max.width = my_getnbr(size);
 	while (size[i] != '*' || size[i] != '\0')
 		++i;
 	if (size[i] != '\0')
 		++i;
 	while (size[i] != '\0')
-		tmp[j++] = size[i++];
+		tmp[j++] = size[i++];
 	max.height = my_getnbr(tmp);
+	free(tmp);
 	return (max);
 }

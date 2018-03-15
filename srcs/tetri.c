@@ -12,9 +12,9 @@ int print_tetri(char *size)
 	struct tetriminos	*tetri = malloc(sizeof(struct tetriminos));
 	struct size		max;
 
-	max = recup_size(size);
 	if (tetri == NULL)
 		return (84);
+	max = recup_size(size);
 	tetri = recup_tetriminos(tetri);
 	tetri = tetri_order(tetri);
 	while (tetri->next != NULL) {
