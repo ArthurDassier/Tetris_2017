@@ -51,7 +51,8 @@ int main(int ac, char **av)
 		{NULL, 0, NULL, 0}
 	};
 
-	while ((oc = getopt_long(ac, av, "hDL:l:r:t:d:q:p:m:w:", longopts, NULL)) != -1)
+	while ((oc = getopt_long(ac, av, "hDL:l:r:t:d:q:p:m:w:",
+			longopts, NULL)) != -1)
 		if (manage_argv(ac, av, oc) == 84)
 			return (84);
 	return (0);
