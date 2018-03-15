@@ -30,7 +30,8 @@ struct tetriminos *recup_tetriminos(struct tetriminos *tetri)
 	struct dirent		*read_direc;
 	struct tetriminos	*tmp = tetri;
 
-	dir = opendir("tetriminos/");
+	if ((dir = opendir("tetriminos/")) == NULL)
+		exit(84);
 	while ((read_direc = readdir(dir)) != NULL) {
 		if (read_direc->d_name[0] != '.') {
 			if ((tetri->form = malloc(sizeof(char *) * 10)) == NULL)
