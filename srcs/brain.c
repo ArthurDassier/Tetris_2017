@@ -48,6 +48,6 @@ int main(int ac, char **av)
 		tetrimino_error_handling(tetri);
 		tetri = tetri->next;
 	}
-	my_printf("Press any key to start Tetris");
+	my_printf("Press any key to start Tetris\n");
 	return (0);
 }

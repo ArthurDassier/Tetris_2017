@@ -32,7 +32,7 @@ int nb_stars(char *str)
 	return (stars);
 }
 
-int is_good_width(struct tetriminos *tetri)
+int is_good_width(struct tetriminos *tetri, int max_width)
 {
 	int	width = 0;
 	int	i = 0;
@@ -42,12 +42,13 @@ int is_good_width(struct tetriminos *tetri)
 			++width;
 		++i;
 	}
-	if (width != my_getnbr(recup_width(tetri->info)) || width == 0)
+	if (width != my_getnbr(recup_width(tetri->info)) || width == 0
+			|| width > max_width)
 		return (-1);
 	return (0);
 }
 
-int is_good_height(struct tetriminos *tetri)
+int is_good_height(struct tetriminos *tetri, int max_height)
 {
 	int	height = 0;
 	int	count = 0;
@@ -59,21 +60,22 @@ int is_good_height(struct tetriminos *tetri)
 			height = count;
 		++i;
 	}
-	if (height != my_getnbr(tetri->info) || height == 0)
+	if (height != my_getnbr(tetri->info) || height == 0
+			|| height > max_height)
 		return (-1);
 	return (0);
 }
 
-void tetrimino_error_handling(struct tetriminos *tetri)
+void tetrimino_error_handling(struct tetriminos *tetri, struct size max)
 {
 	int	i = 0;
 
 	my_printf("Tetriminos : ");
 	my_printf("Name %s : ", recup_tetri_name(tetri->name));
-	if (is_good_width(tetri) != 0) {
+	if (is_good_width(tetri, max.width) != 0) {
 		my_printf("Error\n");
 		return;
-	} else if (is_good_height(tetri) != 0) {
+	} else if (is_good_height(tetri, max.height) != 0) {
 		my_printf("Error\n");
 		return;
 	}
@@ -84,7 +86,7 @@ void tetrimino_error_handling(struct tetriminos *tetri)
 	}
 	my_printf("Size : %s", recup_height(tetri->info));
 	my_printf("*%s ", recup_width(tetri->info));
-	my_printf(" Color : %c\n", tetri->info[4]);
+	my_printf(" Color %c :\n", tetri->info[4]);
 	while (tetri->form[i] != NULL)
 		my_printf("%s\n", tetri->form[i++]);
 }

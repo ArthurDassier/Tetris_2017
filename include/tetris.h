@@ -50,6 +50,12 @@ struct tetriminos
 	struct tetriminos	*next;
 };
 
+struct size
+{
+	int	width;
+	int	height;
+};
+
 char *get_next_line(int fd);
 void draw_help(char **av);
 void print_debug(char_arg *printable);
@@ -64,9 +70,9 @@ void cpy_tetri(struct tetriminos *order, struct tetriminos *tetri);
 int alph_order(struct tetriminos *order, struct tetriminos *tetri, char alph);
 struct tetriminos *tetri_order(struct tetriminos *tetri);
 
-void tetrimino_error_handling(struct tetriminos *tetri);
-int is_good_height(struct tetriminos *tetri);
-int is_good_width(struct tetriminos *tetri);
+void tetrimino_error_handling(struct tetriminos *tetri, struct size max);
+int is_good_height(struct tetriminos *tetri, int max_height);
+int is_good_width(struct tetriminos *tetri, int max_width);
 char *recup_tetri_name(char *name);
 int nb_stars(char *str);
 char *recup_height(char *str);
