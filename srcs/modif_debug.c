@@ -7,6 +7,25 @@
 
 #include "tetris.h"
 
+int check_arg(char *arg)
+{
+	int	i = 0;
+	int	j = 0;
+
+	while (arg[i] != '\0') {
+		if (!((arg[i] >= '0' && arg[i] <= '9') || arg[i] == '*'))
+			return (84);
+		if (arg[i] == '*')
+			++j;
+		++i;
+	}
+	if (j != 1)
+		return (84);
+	if (arg[i - 1] == '*')
+		return (84);
+	return (0);
+}
+
 char *change_str(char *arg, char *printer)
 {
 	int	i = 0;
@@ -27,7 +46,6 @@ char *change_str(char *arg, char *printer)
 		tmp[i] = '\0';
 		my_realloc(tmp);
 	}
-	tmp[i] = '\0';
 	return (tmp);
 }
 
@@ -38,6 +56,8 @@ char *change_size(char *arg, char *printer)
 
 	if (tmp == NULL)
 		return (NULL);
+	if (check_arg(arg) == 84)
+		return (NULL);
 	while (printer[i] != '\t') {
 		tmp[i] = printer[i];
 		++i;
@@ -46,8 +66,6 @@ char *change_size(char *arg, char *printer)
 	++i;
 	for (int j = 0; arg[j] != '\0'; ++j) {
 		tmp[i] = arg[j];
-		if (!((tmp[i] >= '0' && tmp[i] <= '9') || tmp[i] == '*'))
-			return (NULL);
 		++i;
 		tmp[i] = '\0';
 		my_realloc(tmp);
@@ -72,7 +90,8 @@ int modif_debug(int ac, char **av, char_arg *printable)
 		{NULL, 0, NULL, 0}
 	};
 	optind = 1;
-	while ((oc = getopt_long(ac, av, "DL:l:r:t:d:q:p:m:w:", longopts, NULL)) != -1)
+	while ((oc = getopt_long(ac, av, "DL:l:r:t:d:q:p:m:w:",
+	longopts, NULL)) != -1)
 		if (get_argv(oc, printable) == 84)
 			return (84);
 	return (0);

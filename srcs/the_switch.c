@@ -17,11 +17,11 @@ int get_argv_part4(int oc, char_arg *ptb)
 			break;
 		case ':':
 			my_puterror("read --help before testing random"
-			" arguments retard\n");
+			" arguments\n");
 			return (84);
 		case '?':
 			my_puterror("read --help before testing random"
-			" arguments retard\n");
+			" arguments\n");
 			return (84);
 	}
 	return (0);
