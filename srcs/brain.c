@@ -16,7 +16,8 @@ int manage_argv(int ac, char **av, int oc)
 			draw_help(av);
 			return (0);
 		case 'D':
-			launch_debug(ac, av);
+			if (launch_debug(ac, av) == 84)
+				return (84);
 			return (0);
 		case ':':
 			my_puterror("read --help before testing random"

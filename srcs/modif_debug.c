@@ -46,11 +46,12 @@ char *change_size(char *arg, char *printer)
 	++i;
 	for (int j = 0; arg[j] != '\0'; ++j) {
 		tmp[i] = arg[j];
+		if (!((tmp[i] >= '0' && tmp[i] <= '9') || tmp[i] == '*'))
+			return (NULL);
 		++i;
 		tmp[i] = '\0';
 		my_realloc(tmp);
 	}
-	tmp[i] = '\0';
 	return (tmp);
 }
 

@@ -16,7 +16,7 @@ int print_tetri(void)
 	tetri = recup_tetriminos(tetri);
 	tetri = tetri_order(tetri);
 	while (tetri->next != NULL) {
-		tetrimino_error_handling(tetri);
+//		tetrimino_error_handling(tetri);
 		tetri = tetri->next;
 	}
 	my_printf("Press any key to start Tetris\n");
