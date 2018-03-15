@@ -21,12 +21,12 @@ int manage_argv(int ac, char **av, int oc)
 			return (0);
 		case ':':
 			my_puterror("read --help before testing random"
-			" arguments retard\n");
+			" arguments\n");
 			return (84);
 		case '?':
 			my_puterror("read --help before testing random"
-			" arguments retard\n");
-		return (84);
+			" arguments\n");
+			return (84);
 	}
 	return (0);
 }
