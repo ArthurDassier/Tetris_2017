@@ -35,7 +35,7 @@ char *recup_color(char *str)
 	tmp[j] = '\0';
 	return (tmp);
 }
-char *recup_height(char *str)
+char *recup_width(char *str)
 {
 	char	*tmp = malloc(sizeof(char) * (my_strlen(str) + 1));
 	int	i = 0;
@@ -48,7 +48,7 @@ char *recup_height(char *str)
 	return (tmp);
 }
 
-char *recup_width(char *str)
+char *recup_height(char *str)
 {
 	char	*tmp = malloc(sizeof(char) * (my_strlen(str) + 1));
 	int	k = 0;

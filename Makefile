@@ -26,6 +26,7 @@ SRCS	=	srcs/brain.c				\
 		srcs/tetri_order.c			\
 		srcs/recup_tetri_info.c			\
 		srcs/tetri.c				\
+		srcs/recup_size.c			\
 
 OBJS	=	$(SRCS:.c=.o)
 

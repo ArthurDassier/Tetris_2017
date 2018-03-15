@@ -79,7 +79,8 @@ char *recup_height(char *str);
 char *recup_width(char *str);
 char *recup_color(char *str);
 int nb_tetriminos(struct tetriminos *tetri);
-int print_tetri(void);
+int print_tetri(char *size);
 char *change_size(char *arg, char *printer);
+struct size recup_size(char *size);
 
 #endif
