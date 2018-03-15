@@ -27,10 +27,12 @@ SRCS	=	srcs/brain.c				\
 		srcs/recup_tetri_info.c			\
 		srcs/tetri.c				\
 		srcs/recup_size.c			\
+		srcs/check_kcu.c			\
+		srcs/arg_err_handling.c			\
 
 OBJS	=	$(SRCS:.c=.o)
 
-LIB =		-L./lib -lmy
+LIB =		-L./lib -lmy -lncurses
 
 all:		$(NAME)
 

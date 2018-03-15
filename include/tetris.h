@@ -82,5 +82,8 @@ int nb_tetriminos(struct tetriminos *tetri);
 int print_tetri(char *size);
 char *change_size(char *arg, char *printer);
 struct size recup_size(char *size);
+char *check_kcu(char *arg);
+int check_all(char **av);
+void check_yes_no(char *arg);
 
 #endif

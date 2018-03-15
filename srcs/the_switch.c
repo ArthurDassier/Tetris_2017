@@ -11,8 +11,9 @@ int get_argv_part4(int oc, char_arg *ptb)
 {
 	switch (oc) {
 		case 'w':
-			if ((ptb->key_size = change_size(optarg,
-					ptb->key_size)) == NULL)
+			check_yes_no(optarg);
+			if ((ptb->key_next = change_str(optarg,
+					ptb->key_next)) == NULL)
 				return (84);
 			break;
 		case ':':
@@ -41,8 +42,8 @@ int get_argv_part3(int oc, char_arg *ptb)
 				return (84);
 			break;
 		case 'm':
-			if ((ptb->key_next = change_str(optarg,
-					ptb->key_next)) == NULL)
+			if ((ptb->key_size = change_size(optarg,
+					ptb->key_size)) == NULL)
 				return (84);
 			break;
 	}

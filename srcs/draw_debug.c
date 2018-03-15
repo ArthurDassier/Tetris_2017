@@ -44,6 +44,7 @@ int launch_debug(int ac, char **av)
 	printable = init_debug(printable);
 	if (modif_debug(ac, av, printable) == 84)
 		return (84);
+	check_all(av);
 	print_debug(printable);
 	if (print_tetri(printable->key_size) == 84)
 		return (84);
