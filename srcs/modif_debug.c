@@ -49,7 +49,6 @@ char *change_str(char *arg, char *printer)
 
 	if (tmp == NULL)
 		return (NULL);
-	arg = check_kcu(arg);
 	while (printer[i] != ':') {
 		tmp[i] = printer[i];
 		++i;
@@ -90,7 +89,7 @@ char *change_size(char *arg, char *printer)
 	return (tmp);
 }
 
-int modif_debug(int ac, char **av, char_arg *printable)
+int modif_debug(int ac, char **av, char **printable)
 {
 	int			oc;
 	struct option		longopts[] = {

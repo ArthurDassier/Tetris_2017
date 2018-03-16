@@ -36,7 +36,7 @@ typedef struct char_arg
 	char *key_turn;
 	char *key_drop;
 	char *key_quit;
-	char *key_pause;
+	char *key_pause;//
 	char *key_next;
 	char *key_level;
 	char *key_size;
@@ -59,13 +59,13 @@ struct size
 
 char *get_next_line(int fd);
 void draw_help(char **av);
-void print_debug(char_arg *printable);
+void print_debug(char **printable);
 int launch_debug(int ac, char **av);
-int modif_debug(int ac, char **av, char_arg *printable);
+int modif_debug(int ac, char **av, char **printable);
 
 struct tetriminos *recup_tetriminos(struct tetriminos *tetri);
 int remp_tetri_info_form(struct tetriminos *tetri, char *file);
-int get_argv(int oc, char_arg *ptb);
+int get_argv(int oc, char **ptb);
 char *change_str(char *arg, char *printer);
 void cpy_tetri(struct tetriminos *order, struct tetriminos *tetri);
 int alph_order(struct tetriminos *order, struct tetriminos *tetri, char alph);
@@ -85,6 +85,7 @@ char *change_size(char *arg, char *printer);
 struct size recup_size(char *size);
 char *check_kcu(char *arg);
 int check_all(char **av);
+void check_printable(char **printable);
 void check_yes_no(char *arg);
 
 #endif
