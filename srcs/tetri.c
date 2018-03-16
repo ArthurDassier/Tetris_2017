@@ -7,6 +7,17 @@
 
 #include "tetris.h"
 
+void display_infos(struct tetriminos *tetri)
+{
+	int	i = 0;
+
+	my_printf("Size : %s", recup_width(tetri->info));
+	my_printf("*%s ", recup_height(tetri->info));
+	my_printf(" Color %s :\n", recup_color(tetri->info));
+	while (tetri->form[i] != NULL)
+		my_printf("%s\n", tetri->form[i++]);
+}
+
 int print_tetri(char *size)
 {
 	struct tetriminos	*tetri = malloc(sizeof(struct tetriminos));

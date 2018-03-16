@@ -87,4 +87,6 @@ char *check_kcu(char *arg);
 int check_all(char **av);
 void check_yes_no(char *arg);
 
+void display_infos(struct tetriminos *tetri);
+
 #endif

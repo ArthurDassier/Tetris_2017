@@ -68,8 +68,6 @@ int is_good_width(struct tetriminos *tetri, int max_width)
 
 void tetrimino_error_handling(struct tetriminos *tetri, struct size max)
 {
-	int	i = 0;
-
 	my_printf("Tetriminos : ");
 	my_printf("Name %s : ", recup_tetri_name(tetri->name));
 	if (tetri->good != 1) {
@@ -88,9 +86,5 @@ void tetrimino_error_handling(struct tetriminos *tetri, struct size max)
 		my_printf("Error\n");
 		return;	
 	}
-	my_printf("Size : %s", recup_width(tetri->info));
-	my_printf("*%s ", recup_height(tetri->info));
-	my_printf(" Color %s :\n", recup_color(tetri->info));
-	while (tetri->form[i] != NULL)
-		my_printf("%s\n", tetri->form[i++]);
+	display_infos(tetri);
 }

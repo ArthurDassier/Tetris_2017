@@ -39,13 +39,10 @@ struct tetriminos *recup_tetriminos(struct tetriminos *tetri)
 		exit(84);
 	while ((read_direc = readdir(dir)) != NULL) {
 		if (read_direc->d_name[0] != '.') {
-			if ((tetri->form = malloc(sizeof(char *) * 10)) == NULL)
-				return (NULL);
+			tetri->form = malloc(sizeof(char *) * 10);
 			tetri->name = malloc(sizeof(char) *
 				(my_strlen(read_direc->d_name) + 1));
-			if (remp_tetri_info_form(tetri,
-					read_direc->d_name) != 0)
-				return (NULL);
+			remp_tetri_info_form(tetri, read_direc->d_name);
 			tetri->next = malloc(sizeof(struct tetriminos));
 			tetri = tetri->next;
 		}
