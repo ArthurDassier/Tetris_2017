@@ -16,10 +16,15 @@ int remp_tetri_info_form(struct tetriminos *tetri, char *file)
 	my_strcpy(tetri->name, file);
 	if ((fd = open(my_strcat(tetr_dos, file), O_RDONLY)) == -1)
 		return (-1);
-	tetri->info = get_next_line(fd);
+	if ((tetri->info = get_next_line(fd)) == NULL) {
+		tetri->good = 0;
+		close(fd);
+		return (0);
+	}
 	while ((tetri->form[i] = get_next_line(fd)) != NULL)
 		++i;
 	tetri->form[i] = NULL;
+	tetri->good = 1;
 	close(fd);
 	return (0);
 }

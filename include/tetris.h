@@ -44,6 +44,7 @@ typedef struct char_arg
 
 struct tetriminos
 {
+	int			good;
 	char			*name;
 	char			*info;
 	char			**form;

@@ -72,6 +72,10 @@ void tetrimino_error_handling(struct tetriminos *tetri, struct size max)
 
 	my_printf("Tetriminos : ");
 	my_printf("Name %s : ", recup_tetri_name(tetri->name));
+	if (tetri->good != 1) {
+		my_printf("Error\n");
+		return;
+	}
 	if (is_good_width(tetri, max.width) != 0) {
 		my_printf("Error\n");
 		return;

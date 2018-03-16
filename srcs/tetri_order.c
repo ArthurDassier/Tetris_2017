@@ -13,6 +13,9 @@ void cpy_tetri(struct tetriminos *order, struct tetriminos *tetri)
 
 	order->name = malloc(sizeof(char) * (my_strlen(tetri->name) + 1));
 	my_strcpy(order->name, tetri->name);
+	order->good = tetri->good;
+	if (tetri->good != 1)
+		return;
 	order->info = malloc(sizeof(char) * (my_strlen(tetri->info) + 1));
 	my_strcpy(order->info, tetri->info);
 	while (tetri->form[i] != NULL)
