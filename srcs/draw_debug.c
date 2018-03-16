@@ -51,14 +51,13 @@ void do_canon(void)
 {
 	struct termios	origin;
 	struct termios	actual;
-	char lol;
+	char		stock;
 
 	tcgetattr(0, &origin);
 	actual = origin;
-	actual.c_lflag &= ~ICANON;
-	//actual.c_lflag |= ECHO;
+	actual.c_lflag &= ~(ICANON | ECHO);
 	tcsetattr(0, TCSANOW, &actual);
-	read(0, &lol, 1);
+	read(0, &stock, 1);
 	tcsetattr(0, TCSANOW, &origin);
 }
 
