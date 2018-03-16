@@ -22,12 +22,8 @@ int manage_argv(int ac, char **av, int oc)
 		default:
 			break;
 		case ':':
-			my_puterror("read --help before testing random"
-			" arguments\n");
 			return (84);
 		case '?':
-			my_puterror("read --help before testing random"
-			" arguments\n");
 			return (84);
 	}
 	return (0);

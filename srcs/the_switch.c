@@ -17,12 +17,8 @@ int get_argv_part4(int oc, char **ptb)
 				return (84);
 			break;
 		case ':':
-			my_puterror("read --help before testing random"
-			" arguments\n");
 			return (84);
 		case '?':
-			my_puterror("read --help before testing random"
-			" arguments\n");
 			return (84);
 	}
 	return (0);
