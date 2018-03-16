@@ -13,8 +13,8 @@ char **init_debug(char **printable)
 	printable[1] = "Key Right : ";
 	printable[2] = "Key Turn : ";
 	printable[3] = "Key Drop : ";
-	printable[4] = "Key Quit : ";
-	printable[5] = "Key Pause : ";
+	printable[4] = "Key Quit : q";
+	printable[5] = "Key Pause : (pause)";
 	printable[6] = "Next : Yes";
 	printable[7] = "Level : 1";
 	printable[8] = "Size : 20*10";
@@ -39,10 +39,8 @@ void print_debug(char **printable)
 	print_kcu(printable[2], "kcuu1", 11);
 	my_printf("%s", printable[3]);
 	print_kcu(printable[3], "kcud1", 11);
-	my_printf("%s", printable[4]);
-	print_kcu(printable[4], "kcuf1", 200);
-	my_printf("%s", printable[5]);
-	print_kcu(printable[5], "kcuf1", 200);
+	my_printf("%s\n", printable[4]);
+	my_printf("%s\n", printable[5]);
 	my_printf("%s\n", printable[6]);
 	my_printf("%s\n", printable[7]);
 	my_printf("%s\n", printable[8]);
