@@ -9,15 +9,15 @@
 
 char_arg *init_debug(char_arg *printable)
 {
-	printable->key_left = "Key Left :  ^EOD";
-	printable->key_right = "Key Right :  ^EOD";
-	printable->key_turn = "Key Turn :  (space)";
-	printable->key_drop = "Key Drop :  x";
-	printable->key_quit = "Key Quit :  q";
-	printable->key_pause = "Key Pause :  p";
-	printable->key_next = "Next :  Yes";
-	printable->key_level = "Level :  1";
-	printable->key_size = "Size :  20*10";
+	printable->key_left = "Key Left : ^EOD";
+	printable->key_right = "Key Right : ^EOD";
+	printable->key_turn = "Key Turn : (space)";
+	printable->key_drop = "Key Drop : x";
+	printable->key_quit = "Key Quit : q";
+	printable->key_pause = "Key Pause : p";
+	printable->key_next = "Next : Yes";
+	printable->key_level = "Level : 1";
+	printable->key_size = "Size : 20*10";
 	return (printable);
 }
 

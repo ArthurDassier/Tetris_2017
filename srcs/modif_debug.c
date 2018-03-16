@@ -54,9 +54,9 @@ char *change_str(char *arg, char *printer)
 		tmp[i] = printer[i];
 		++i;
 	}
-	for (int count = i; count != i + 3; ++count)
+	for (int count = i; count != i + 2; ++count)
 		tmp[count] = printer[count];
-	i += 3;
+	i += 2;
 	for (int j = 0; arg[j] != '\0'; ++j) {
 		tmp[i] = arg[j];
 		tmp = check_space(tmp, &i);
@@ -78,9 +78,9 @@ char *change_size(char *arg, char *printer)
 		tmp[i] = printer[i];
 		++i;
 	}
-	for (int count = i; count != i + 3; ++count)
+	for (int count = i; count != i + 2; ++count)
 		tmp[count] = printer[count];
-	i += 3;
+	i += 2;
 	for (int j = 0; arg[j] != '\0'; ++j) {
 		tmp[i] = arg[j];
 		++i;
