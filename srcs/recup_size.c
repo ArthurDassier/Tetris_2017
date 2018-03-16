@@ -30,7 +30,6 @@ struct size recup_size(char *size)
 		tmp[j++] = size[i];
 	tmp[j] = '\0';
 	max.height = my_getnbr(tmp);
-	my_printf("%d	%d\n", max.width, max.height);
 	free(tmp);
 	free(tmp2);
 	return (max);
