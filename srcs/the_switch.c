@@ -7,13 +7,13 @@
 
 #include "tetris.h"
 
-int get_argv_part4(int oc, char_arg *ptb)
+int get_argv_part4(int oc, char **ptb)
 {
 	switch (oc) {
 		case 'w':
 			check_yes_no(optarg);
-			if ((ptb->key_next = change_str(optarg,
-					ptb->key_next)) == NULL)
+			if ((ptb[6] = change_str(optarg,
+					ptb[6])) == NULL)
 				return (84);
 			break;
 		case ':':
@@ -28,22 +28,22 @@ int get_argv_part4(int oc, char_arg *ptb)
 	return (0);
 }
 
-int get_argv_part3(int oc, char_arg *ptb)
+int get_argv_part3(int oc, char **ptb)
 {
 	switch (oc) {
 		case 'r':
-			if ((ptb->key_right = change_str(optarg,
-					ptb->key_right)) == NULL)
+			if ((ptb[1] = change_str(optarg,
+					ptb[1])) == NULL)
 				return (84);
 			break;
 		case 'p':
-			if ((ptb->key_pause = change_str(optarg,
-					ptb->key_pause)) == NULL)
+			if ((ptb[5] = change_str(optarg,
+					ptb[5])) == NULL)
 				return (84);
 			break;
 		case 'm':
-			if ((ptb->key_size = change_size(optarg,
-					ptb->key_size)) == NULL)
+			if ((ptb[8] = change_size(optarg,
+					ptb[8])) == NULL)
 				return (84);
 			break;
 	}
@@ -52,22 +52,22 @@ int get_argv_part3(int oc, char_arg *ptb)
 	return (0);
 }
 
-int get_argv_part2(int oc, char_arg *ptb)
+int get_argv_part2(int oc, char **ptb)
 {
 	switch (oc) {
 		case 't':
-			if ((ptb->key_turn = change_str(optarg,
-					ptb->key_turn)) == NULL)
+			if ((ptb[2] = change_str(optarg,
+					ptb[2])) == NULL)
 				return (84);
 			break;
 		case 'd':
-			if ((ptb->key_drop = change_str(optarg,
-					ptb->key_drop)) == NULL)
+			if ((ptb[3] = change_str(optarg,
+					ptb[3])) == NULL)
 				return (84);
 			break;
 		case 'q':
-			if ((ptb->key_quit = change_str(optarg,
-					ptb->key_quit)) == NULL)
+			if ((ptb[4] = change_str(optarg,
+					ptb[4])) == NULL)
 				return (84);
 			break;
 	}
@@ -76,19 +76,19 @@ int get_argv_part2(int oc, char_arg *ptb)
 	return (0);
 }
 
-int get_argv(int oc, char_arg *ptb)
+int get_argv(int oc, char **ptb)
 {
 	switch (oc) {
 		case 'D':
 			break;
 		case 'L':
-			if ((ptb->key_level = change_str(optarg,
-					ptb->key_level)) == NULL)
+			if ((ptb[7] = change_str(optarg,
+					ptb[7])) == NULL)
 				return (84);
 			break;
 		case 'l':
-			if ((ptb->key_left = change_str(optarg,
-					ptb->key_left)) == NULL)
+			if ((ptb[0] = change_str(optarg,
+					ptb[0])) == NULL)
 				return (84);
 			break;
 	}

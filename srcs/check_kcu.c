@@ -26,15 +26,11 @@ char *check_kcu(char *arg)
 	char	*tmp;
 
 	setupterm(NULL, 0, NULL);
-	if (my_strlen(arg) < 5 || my_strlen(arg) > 5)
-		return (arg);
-	if (arg[0] == 'k' && arg[1] == 'c' && arg[2] == 'u') {
-		tmp = tigetstr("kcub1");
-		if (tmp == (char*) -1)
-			return (arg);
-		for (int i = 0; tmp[i] != '\0'; ++i)
-			tmp = convert_kcu(tmp, unctrl(tmp[i]), &i);
-		return (tmp);
-	}
-	return (arg);
+	tmp = tigetstr(arg);
+	if (tmp == (char*) -1)
+		exit(84);
+	if (tmp[0] == 27)
+		my_putstr("^E");
+	my_printf("%s", tmp + 1);
+	return (tmp);
 }

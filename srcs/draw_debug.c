@@ -7,37 +7,48 @@
 
 #include "tetris.h"
 
-char_arg *init_debug(char_arg *printable)
+char **init_debug(char **printable)
 {
-	printable->key_left = "Key Left : ^EOD";
-	printable->key_right = "Key Right : ^EOD";
-	printable->key_turn = "Key Turn : (space)";
-	printable->key_drop = "Key Drop : x";
-	printable->key_quit = "Key Quit : q";
-	printable->key_pause = "Key Pause : p";
-	printable->key_next = "Next : Yes";
-	printable->key_level = "Level : 1";
-	printable->key_size = "Size : 20*10";
+	printable[0] = "Key Left : ";
+	printable[1] = "Key Right : ";
+	printable[2] = "Key Turn : ";
+	printable[3] = "Key Drop : ";
+	printable[4] = "Key Quit : q";
+	printable[5] = "Key Pause : (pause)";
+	printable[6] = "Next : Yes";
+	printable[7] = "Level : 1";
+	printable[8] = "Size : 20*10";
 	return (printable);
 }
 
-void print_debug(char_arg *printable)
+void print_kcu(char *printable, char *arg, int i)
+{
+	if (my_strlen(printable) == i)
+		check_kcu(arg);
+	my_putchar('\n');
+}
+
+void print_debug(char **printable)
 {
 	my_printf("*** DEBUG MODE ***\n");
-	my_printf("%s\n", printable->key_left);
-	my_printf("%s\n", printable->key_right);
-	my_printf("%s\n", printable->key_turn);
-	my_printf("%s\n", printable->key_drop);
-	my_printf("%s\n", printable->key_quit);
-	my_printf("%s\n", printable->key_pause);
-	my_printf("%s\n", printable->key_next);
-	my_printf("%s\n", printable->key_level);
-	my_printf("%s\n", printable->key_size);
+	my_printf("%s", printable[0]);
+	print_kcu(printable[0], "kcub1", 11);
+	my_printf("%s", printable[1]);
+	print_kcu(printable[1], "kcuf1", 12);
+	my_printf("%s", printable[2]);
+	print_kcu(printable[2], "kcuu1", 11);
+	my_printf("%s", printable[3]);
+	print_kcu(printable[3], "kcud1", 11);
+	my_printf("%s\n", printable[4]);
+	my_printf("%s\n", printable[5]);
+	my_printf("%s\n", printable[6]);
+	my_printf("%s\n", printable[7]);
+	my_printf("%s\n", printable[8]);
 }
 
 int launch_debug(int ac, char **av)
 {
-	char_arg	*printable = malloc(sizeof(char_arg));
+	char	**printable = malloc(sizeof(char *) * 9);
 
 	if (printable == NULL)
 		return (84);
@@ -46,7 +57,7 @@ int launch_debug(int ac, char **av)
 		return (84);
 	check_all(av);
 	print_debug(printable);
-	if (print_tetri(printable->key_size) == 84)
+	if (print_tetri(printable[8]) == 84)
 		return (84);
 	return (0);
 }
