@@ -59,6 +59,7 @@ void do_canon(void)
 	tcsetattr(0, TCSANOW, &actual);
 	read(0, &stock, 1);
 	tcsetattr(0, TCSANOW, &origin);
+	my_putchar('\n');
 }
 
 int launch_debug(int ac, char **av)

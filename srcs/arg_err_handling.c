@@ -7,23 +7,6 @@
 
 #include "tetris.h"
 
-void check_yes_no(char *arg)
-{
-	int	i = my_strlen(arg);
-
-	if (i != 2 && i != 3)
-		exit(84);
-	if (i == 2) {
-		if (arg[0] != 'N' || arg[1] != 'o')
-			exit(84);
-		return;
-	} else if (i == 3) {
-		if (arg[0] != 'Y' || arg[1] != 'e' || arg[2] != 's')
-			exit(84);
-		return;
-	}
-}
-
 int my_str_cmp(char *str1, char *str2, int count1, int count2)
 {
 	int	i = 0;

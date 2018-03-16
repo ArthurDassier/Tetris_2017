@@ -101,12 +101,12 @@ int modif_debug(int ac, char **av, char **printable)
 		{"key-quit", required_argument, NULL, 'q'},
 		{"key-pause", required_argument, NULL, 'p'},
 		{"map-size", required_argument, NULL, 'm'},
-		{"without-next", required_argument, NULL, 'w'},
+		{"without-next", no_argument, NULL, 'w'},
 		{"debug", no_argument, NULL, 'D'},
 		{NULL, 0, NULL, 0}
 	};
 	optind = 1;
-	while ((oc = getopt_long(ac, av, "DL:l:r:t:d:q:p:m:w:",
+	while ((oc = getopt_long(ac, av, "DL:l:r:t:d:q:p:m:w",
 	longopts, NULL)) != -1)
 		if (get_argv(oc, printable) == 84)
 			return (84);

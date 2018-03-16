@@ -11,8 +11,7 @@ int get_argv_part4(int oc, char **ptb)
 {
 	switch (oc) {
 		case 'w':
-			check_yes_no(optarg);
-			if ((ptb[6] = change_str(optarg,
+			if ((ptb[6] = change_str("No",
 					ptb[6])) == NULL)
 				return (84);
 			break;
