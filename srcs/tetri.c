@@ -33,6 +33,6 @@ int print_tetri(char *size)
 		tetrimino_error_handling(tetri, max);
 		tetri = tetri->next;
 	}
-	my_printf("Press any key to start Tetris\n");
+	my_printf("Press any key to start Tetris");
 	return (0);
 }

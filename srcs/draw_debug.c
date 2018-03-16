@@ -6,6 +6,7 @@
 */
 
 #include "tetris.h"
+#include <term.h>
 
 char **init_debug(char **printable)
 {
@@ -46,6 +47,21 @@ void print_debug(char **printable)
 	my_printf("%s\n", printable[8]);
 }
 
+void do_canon(void)
+{
+	struct termios	origin;
+	struct termios	actual;
+	char lol;
+
+	tcgetattr(0, &origin);
+	actual = origin;
+	actual.c_lflag &= ~ICANON;
+	//actual.c_lflag |= ECHO;
+	tcsetattr(0, TCSANOW, &actual);
+	read(0, &lol, 1);
+	tcsetattr(0, TCSANOW, &origin);
+}
+
 int launch_debug(int ac, char **av)
 {
 	char	**printable = malloc(sizeof(char *) * 9);
@@ -59,5 +75,6 @@ int launch_debug(int ac, char **av)
 	print_debug(printable);
 	if (print_tetri(printable[8]) == 84)
 		return (84);
+	do_canon();
 	return (0);
 }
