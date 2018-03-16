@@ -15,7 +15,8 @@ int print_tetri(char *size)
 	if (tetri == NULL)
 		return (84);
 	max = recup_size(size);
-	tetri = recup_tetriminos(tetri);
+	if ((tetri = recup_tetriminos(tetri)) == NULL)
+		exit(84);
 	tetri = tetri_order(tetri);
 	while (tetri->next != NULL) {
 		tetrimino_error_handling(tetri, max);
