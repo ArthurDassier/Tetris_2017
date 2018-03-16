@@ -74,12 +74,13 @@ char *change_size(char *arg, char *printer)
 
 	if (tmp == NULL || check_arg(arg) == 84)
 		return (NULL);
-	while (printer[i] != '\t') {
+	while (printer[i] != ':') {
 		tmp[i] = printer[i];
 		++i;
 	}
-	tmp[i] = printer[i];
-	++i;
+	for (int count = i; count != i + 3; ++count)
+		tmp[count] = printer[count];
+	i += 3;
 	for (int j = 0; arg[j] != '\0'; ++j) {
 		tmp[i] = arg[j];
 		++i;
