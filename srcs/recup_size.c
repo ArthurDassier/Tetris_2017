@@ -17,9 +17,11 @@ struct size recup_size(char *size)
 
 	if (tmp == NULL || tmp2 == NULL)
 		exit (84);
-	while (size[i] != '\t')
+	while (size[i] != '\0')
 		++i;
-	while (size[++i] != '*' && size[i] != '\0')
+	while (size[i] != ' ')
+		--i;
+	while (size[++i] != '*')
 		tmp2[j++] = size[i];
 	tmp2[j] = '\0';
 	max.width = my_getnbr(tmp2);
@@ -28,6 +30,7 @@ struct size recup_size(char *size)
 		tmp[j++] = size[i];
 	tmp[j] = '\0';
 	max.height = my_getnbr(tmp);
+	my_printf("%d	%d\n", max.width, max.height);
 	free(tmp);
 	free(tmp2);
 	return (max);
