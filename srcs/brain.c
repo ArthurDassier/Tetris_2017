@@ -14,11 +14,11 @@ int manage_argv(int ac, char **av, int oc)
 			if (ac > 2)
 				return (84);
 			draw_help(av);
-			exit (0);
+			exit(0);
 		case 'D':
 			if (launch_debug(ac, av) == 84)
-				exit (84);
-			exit (0);
+				exit(84);
+			exit(0);
 		default:
 			break;
 		case ':':

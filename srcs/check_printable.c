@@ -27,18 +27,23 @@ void comp_str(char *str1, char *str2)
 	exit(84);
 }
 
+void analyse_every_line(char **printable, int i)
+{
+	int	j = 0;
+
+	while (j != 8) {
+		if (j != i)
+			comp_str(printable[i], printable[j]);
+		++j;
+	}
+}
+
 void check_printable(char **printable)
 {
 	int	i = 0;
-	int	j = 0;
 
 	while (i != 8) {
-		while (j != 8) {
-			if (j != i)
-				comp_str(printable[i], printable[j]);
-			++j;
-		}
-		j = 0;
+		analyse_every_line(printable, i);
 		++i;
 	}
 }

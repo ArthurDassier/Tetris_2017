@@ -11,7 +11,7 @@ int remp_tetri_info_form(struct tetriminos *tetri, char *file)
 {
 	static char	*tetr_dos = "tetriminos/";
 	int		i = 0;
-	int		fd  = 0;
+	int		fd = 0;
 
 	my_strcpy(tetri->name, file);
 	if ((fd = open(my_strcat(tetr_dos, file), O_RDONLY)) == -1)

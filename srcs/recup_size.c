@@ -7,6 +7,17 @@
 
 #include "tetris.h"
 
+void part_two(struct size *max, char *tmp, char *size, int i)
+{
+	int	j = 0;
+
+	while (size[++i] != '\0')
+	tmp[j++] = size[i];
+	tmp[j] = '\0';
+	max->height = my_getnbr(tmp);
+	free(tmp);
+}
+
 struct size recup_size(char *size)
 {
 	struct	size max;
@@ -25,12 +36,7 @@ struct size recup_size(char *size)
 		tmp2[j++] = size[i];
 	tmp2[j] = '\0';
 	max.width = my_getnbr(tmp2);
-	j = 0;
-	while (size[++i] != '\0')
-		tmp[j++] = size[i];
-	tmp[j] = '\0';
-	max.height = my_getnbr(tmp);
-	free(tmp);
+	part_two(&max, tmp, size, i);
 	free(tmp2);
 	return (max);
 }

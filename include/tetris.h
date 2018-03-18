@@ -29,19 +29,6 @@
 #include <stdio.h>
 #include <getopt.h>
 
-typedef struct char_arg
-{
-	char *key_left;
-	char *key_right;
-	char *key_turn;
-	char *key_drop;
-	char *key_quit;
-	char *key_pause;//
-	char *key_next;
-	char *key_level;
-	char *key_size;
-} char_arg;
-
 struct tetriminos
 {
 	int			good;
