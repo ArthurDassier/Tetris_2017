@@ -7,7 +7,7 @@
 
 CC=		gcc
 
-OBJ=            $(SRC:.c=.o)
+OBJ=		$(SRC:.c=.o)
 
 NAME=		libmy.a
 
@@ -38,18 +38,18 @@ SRC=		my_printf/cases.c		\
 		my_swap.c			\
 
 
-all :           $(NAME)
+all:		$(NAME)
 
 $(NAME):	$(OBJ)
 		ar rc $(NAME) $(OBJ)
 		cp $(NAME) ../
 
-.PHONY: clean
+.PHONY:		clean
 
 clean:
 		rm -f $(OBJ)
 
-fclean:         clean
+fclean:		clean
 		rm -f $(NAME)
 
 re:		fclean all
