@@ -15,7 +15,7 @@ char **init_debug(char **printable)
 	printable[2] = "Key Turn : ";
 	printable[3] = "Key Drop : ";
 	printable[4] = "Key Quit : q";
-	printable[5] = "Key Pause : (pause)";
+	printable[5] = "Key Pause : (space)";
 	printable[6] = "Next : Yes";
 	printable[7] = "Level : 1";
 	printable[8] = "Size : 20*10";
