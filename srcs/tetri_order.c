@@ -49,7 +49,7 @@ struct tetriminos *tetri_order(struct tetriminos *tetri)
 {
 	struct tetriminos	*order = malloc(sizeof(struct tetriminos));
 	struct tetriminos	*tmp = order;
-	char			*alph = "123456789abcdefghijklmnopqrstuvwxyz";
+	char		*alph = "123456789abcdefghijklmnopqrstuvwxyz";
 	int			i = 0;
 
 	my_printf("Tetriminos : %d\n", nb_tetriminos(tetri));

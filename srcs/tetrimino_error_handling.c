@@ -84,7 +84,7 @@ void tetrimino_error_handling(struct tetriminos *tetri, struct size max)
 	if (my_getnbr(recup_color(tetri->info)) < 0 ||
 			my_getnbr(recup_color(tetri->info)) > 8) {
 		my_printf("Error\n");
-		return;	
+		return;
 	}
 	display_infos(tetri);
 }

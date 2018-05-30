@@ -34,18 +34,8 @@ void analyse_before(int ac, char **av)
 	int	i = 1;
 
 	while (i != ac) {
-		if (av[i][0] && av[i][1]) {
-			if (av[i][0] == '-' && av[i][1] == 'D')
+		if (av[i][0] == '-')
 			return;
-			if (av[i][0] == '-' && av[i][1] == 'h')
-			return;
-		}
-		if (av[i][0] && av[i][1] && av[i][2]) {
-			if (av[i][0] == '-' && av[i][1] == '-'
-			&& av[i][2] == 'h') {
-				return;
-			}
-		}
 		++i;
 	}
 	exit(84);
