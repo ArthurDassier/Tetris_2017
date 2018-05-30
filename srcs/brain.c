@@ -34,10 +34,18 @@ void analyse_before(int ac, char **av)
 	int	i = 1;
 
 	while (i != ac) {
-		if (av[i][0] == '-')
+		if (my_strlen(av[i]) >= 2 && av[i][0] == '-'
+		&& av[i][1] == 'D')
+			return;
+		if (my_strlen(av[i]) >= 2 && av[i][0] == '-'
+		&& av[i][1] == 'h')
+			return;
+		if (my_strlen(av[i]) >= 3 && av[i][0] == '-'
+		&& av[i][1] == '-' && av[i][2] == 'h')
 			return;
 		++i;
 	}
+	my_puterror("Invalid flag\n");
 	exit(84);
 }
 
